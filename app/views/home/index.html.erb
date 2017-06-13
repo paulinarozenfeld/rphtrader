@@ -144,9 +144,9 @@
         <div class="tp-banner-container">
             <div class="tp-banner" >
                 <ul>
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="<%= image_tag 'paulina.jpg' %>" data-delay="8000"  data-saveperformance="off"  data-title="We are Hosting">
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="/paulina.jpg" data-delay="8000"  data-saveperformance="off"  data-title="We are Hosting">
                         <!-- MAIN IMAGE -->
-                        <%= image_tag 'slider-5.jpg', data: { data_bgposition: "top bottom", data_kenburns: "on", data_duration: "8000", data_ease: "Linear.easeNone", data_bgfit: "100", data_bgfitend: "130", data_bgpositionend: "bottom center" } %>
+                        <%= image_tag 'paulina.jpg', data: { data_bgposition: "top bottom", data_kenburns: "on", data_duration: "8000", data_ease: "Linear.easeNone", data_bgfit: "100", data_bgfitend: "130", data_bgpositionend: "bottom center" } %>
 
 
                         <!-- LAYER NR. 1 -->
@@ -178,7 +178,7 @@
                         </div>
                     </li>
 
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="assets/images/slider/slider-6.jpg" data-delay="8000"  data-saveperformance="off"  data-title="We are Hosting">
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="/paulina.jpg" data-delay="8000"  data-saveperformance="off"  data-title="We are Hosting">
                         <!-- MAIN IMAGE -->
                         <%= image_tag "slider-6.jpg", data: { data_bgposition: "top bottom", data_kenburns: "on", data_duration: "8000", data_ease: "Linear.easeNone", data_bgfit: "100", data_bgfitend: "130", data_bgpositionend: "bottom center" } %>
 
@@ -223,34 +223,14 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="domain-wrapper">
-                        <h3>Register Your Domain Now!</h3>
+                        <h3>Check Pharmacies Looking For You In Your Area!</h3>
 
                         <div class="domain-bar">
                             <form class="subscribeForm" method="POST">
                                 <input class="domainSearchBar inline-block" value="ex: cloudhost" onblur="if(this.value=='')this.value='ex: cloudhost'" onfocus="if(this.value=='ex: cloudhost')this.value=''" id="domainSearchBar" name="email" type="email">
-
-                                <div class="dropdown option">
-                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">.com <span class="caret"></span></button>
-
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        <li><a>.net</a></li>
-                                        <li><a>.org</a></li>
-                                        <li><a>.us</a></li>
-                                        <li><a>.in</a></li>
-                                    </ul>
-                                </div>
-
                                 <button type="submit" class="subscribeBtn inline-block">Find</button>
                             </form>
                         </div> <!-- search-bar -->
-
-                        <ul class="package">
-                            <li><span><%= image_tag "com.png" %></span> $3.95</li>
-                            <li><span><%= image_tag "uk.png" %></span> $4.99</li>
-                            <li><span><%= image_tag "org.png" %></span> $7.95</li>
-                            <li><span><%= image_tag "co.png" %></span> $5.99</li>
-                            <li><span><%= image_tag "couk.png" %></span> $9.95</li>
-                        </ul>
                     </div> <!-- domain-wrapper -->
                 </div>
             </div>
@@ -262,7 +242,7 @@
     <section class="priceing-section section-padding">
         <div class="container">
             <div class="section-title text-center">
-                <h2>Our Wide Range of Plans</h2>
+                <h2>What Makes Rph Trader Right For You</h2>
                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con sequuntur <br> magni dolores eos qui ratione</p>
             </div> <!-- section-title -->
 
@@ -271,13 +251,12 @@
                     <div class="col-md-4">
                         <div class="priceing-wrapper">
                             <div class="header">
-                              <%= image_tag "i1.png" %>
+                              <%= image_tag "i2_info.png" %>
                             </div>
 
                             <div class="priceing-content">
                                 <div class="priceing-head">
-                                    <span class="amount"><sup>$</sup>21.99</span> <br>
-                                    <span class="option">Basic</span>
+                                    <span class="amount">Pharmacies</span>
                                 </div> <!-- priceing-head -->
 
                                 <ul class="feature">
@@ -296,13 +275,13 @@
                     <div class="col-md-4">
                         <div class="priceing-wrapper premium-wrapper">
                             <div class="header">
-                              <%= image_tag "i2.png" %>
+                              <%= image_tag "i1_info.png" %>
                             </div>
 
                             <div class="priceing-content">
                                 <div class="priceing-head">
-                                    <span class="amount"><sup>$</sup>41.99</span> <br>
-                                    <span class="option">Premium</span>                                     </div> <!-- priceing-head -->
+                                    <span class="amount">Pharmacist</span>
+                                </div> <!-- priceing-head -->
 
                                 <ul class="feature">
                                     <li><span class="success"><i class="fa fa-check" aria-hidden="true"></i></span> 100 GB Disk Space</li>
@@ -320,13 +299,12 @@
                     <div class="col-md-4">
                         <div class="priceing-wrapper">
                             <div class="header">
-                              <%= image_tag "i3.png" %>
+                              <%= image_tag "i3_info.png" %>
                             </div>
 
                             <div class="priceing-content">
                                 <div class="priceing-head">
-                                    <span class="amount"><sup>$</sup>61.99</span> <br>
-                                    <span class="option">Enterprise</span>
+                                    <span class="amount">Get Yours</span>
                                 </div> <!-- priceing-head -->
 
                                 <ul class="feature">
@@ -342,403 +320,9 @@
                         </div>
                     </div>
                 </div>
-
-                <h4><a href="#">View More Plans <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></h4>
             </div> <!-- second-priceing-table -->
         </div>
     </section> <!-- priceing-section -->
-
-
-
-    <section class="information-section section-padding">
-        <div class="container text-center">
-            <div class="section-title">
-                <h2>What makes Cloud Host the best hosting <br> solution for you</h2>
-            </div> <!-- section-title -->
-
-            <div class="information-carousel owl-carousel owl-theme">
-                <div class="item">
-                    <div class="information-wrapper">
-                        <span class="caption">
-                          <%= image_tag "i1_info.png" %>
-                        </span>
-
-                        <h3>100% Up time guranteed</h3>
-                        <p>Do eiusmod tempor incididunt ut labore magna hobe na</p>
-
-                        <a class="link" href="#">See how it works  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                    </div> <!-- information-wrapper -->
-                </div>
-
-                <div class="item">
-                    <div class="information-wrapper">
-                        <span class="caption">
-                          <%= image_tag "i2_info.png" %>
-                        </span>
-
-                        <h3>Secure and Fast Loading</h3>
-                        <p>Do eiusmod tempor incididunt ut labore magna hobe na</p>
-
-                        <a class="link" href="#">See how it works  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                    </div> <!-- information-wrapper -->
-                </div>
-
-                <div class="item">
-                    <div class="information-wrapper">
-                        <span class="caption">
-                          <%= image_tag "i3_info.png" %>
-                        </span>
-
-                        <h3>24/7 Dedicated Support</h3>
-                        <p>Do eiusmod tempor incididunt ut labore magna hobe na</p>
-
-                        <a class="link" href="#">See how it works  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                    </div> <!-- information-wrapper -->
-                </div>
-
-                <div class="item">
-                    <div class="information-wrapper">
-                        <span class="caption">
-                          <%= image_tag "i1_info.png" %>
-                        </span>
-
-                        <h3>100% Up time guranteed</h3>
-                        <p>Do eiusmod tempor incididunt ut labore magna hobe na</p>
-
-                        <a class="link" href="#">See how it works  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                    </div> <!-- information-wrapper -->
-                </div>
-
-                <div class="item">
-                    <div class="information-wrapper">
-                        <span class="caption">
-                          <%= image_tag "i2_info.png" %>
-                        </span>
-
-                        <h3>Secure and Fast Loading</h3>
-                        <p>Do eiusmod tempor incididunt ut labore magna hobe na</p>
-
-                        <a class="link" href="#">See how it works  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                    </div> <!-- information-wrapper -->
-                </div>
-
-                <div class="item">
-                    <div class="information-wrapper">
-                        <span class="caption">
-                          <%= image_tag "i3_info.png" %>
-                        </span>
-
-                        <h3>24/7 Dedicated Support</h3>
-                        <p>Do eiusmod tempor incididunt ut labore magna hobe na</p>
-
-                        <a class="link" href="#">See how it works  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                    </div> <!-- information-wrapper -->
-                </div>
-
-                <div class="item">
-                    <div class="information-wrapper">
-                        <span class="caption">
-                          <%= image_tag "i2_info.png" %>
-                        </span>
-
-                        <h3>Secure and Fast Loading</h3>
-                        <p>Do eiusmod tempor incididunt ut labore magna hobe na</p>
-
-                        <a class="link" href="#">See how it works  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                    </div> <!-- information-wrapper -->
-                </div>
-            </div>
-        </div>
-    </section> <!-- information-section -->
-
-
-
-    <section class="counting-section">
-        <div class="container text-center">
-            <h2 class="hidden">counting-title</h2>
-
-            <div class="counting-pusher">
-                <div class="counting-wrapper">
-                    <span class="caption">
-                      <%= image_tag "i1_counting.png" %>
-                    </span>
-
-                    <div class="count-description">
-                        <span class="timer">9000</span>+
-                    </div>
-                    <p>Satisfied client</p>
-                </div>  <!-- counting-wrapper -->
-
-                <div class="counting-wrapper">
-                    <span class="caption">
-                      <%= image_tag "i2_counting.png" %>
-                    </span>
-
-                    <div class="count-description">
-                        <span class="timer">1200</span>
-                    </div>
-                    <p>Sold Domains</p>
-                </div>  <!-- counting-wrapper -->
-
-                <div class="counting-wrapper">
-                    <span class="caption">
-                      <%= image_tag "i3_counting.png" %>
-                    </span>
-
-                    <div class="count-description">
-                        <span class="timer">2190</span>
-                    </div>
-                    <p>Times Shared</p>
-                </div>  <!-- counting-wrapper -->
-
-                <div class="counting-wrapper">
-                    <span class="caption">
-                      <%= image_tag "i4_counting.png" %>
-                    </span>
-
-                    <div class="count-description">
-                        <span class="timer">9837</span>
-                    </div>
-                    <p>Hosted Sites</p>
-                </div>  <!-- counting-wrapper -->
-            </div> <!-- /.counting-pusher -->
-        </div>
-    </section> <!-- counting-section -->
-
-
-
-    <section class="service-section section-padding">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2>Our Hosting Services</h2>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con sequuntur <br> magni dolores eos qui ratione</p>
-            </div> <!-- section-title -->
-
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="service-wrapper">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li class="btn-primary active" role="presentation"><a href="#share" aria-controls="share" role="tab" data-toggle="tab"><i class="fa fa-cubes" aria-hidden="true"></i> Shared</a></li>
-                                    <li class="btn-primary" role="presentation"><a href="#dedicated" aria-controls="dedicated" role="tab" data-toggle="tab"><i class="fa fa-code-fork" aria-hidden="true"></i> Dedicated</a></li>
-                                    <li class="btn-primary" role="presentation"><a href="#cloud" aria-controls="cloud" role="tab" data-toggle="tab"><i class="fa fa-cloud" aria-hidden="true"></i> Cloud</a></li>
-                                    <li class="btn-primary" role="presentation"><a href="#wordpress" aria-controls="wordpress" role="tab" data-toggle="tab"><i class="fa fa-wordpress" aria-hidden="true"></i> Wordpress</a> <span class="feature">New</span></li>
-                                    <li class="btn-primary" role="presentation"><a href="#vps" aria-controls="vps" role="tab" data-toggle="tab"><i class="fa fa-server" aria-hidden="true"></i> Vps</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="col-md-9">
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active fade in" id="share">
-                                        <div class="service-content text-left">
-                                            <div class="row">
-                                                <div class="col-xs-12">
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <span class="caption">
-                                                              <%= image_tag "service-hosting.jpg" %>
-                                                            </span>
-                                                        </div>
-
-                                                        <div class="col-sm-6">
-                                                            <div class="content-wrapper">
-                                                                <h3>Shared Hosting</h3>
-
-                                                                <span class="small-text">Cost starts at $7.99</span>
-
-                                                                <div class="detail-wrapper">
-                                                                    <ul class="detail">
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Dedicated IP</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> SSL Certificate</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Domain Privacy</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Site Backup Pro</li>
-                                                                    </ul>
-
-                                                                    <ul class="detail">
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Renewal Price</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Available CPUs</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <p>The web is the most powerful resource on the planet, and we're here to help you harness it. Cloud Sites includes our renowned 24/7 support so you can always get the help you need, right when you need it.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div role="tabpanel" class="tab-pane fade" id="dedicated">
-                                        <div class="service-content text-left">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <span class="caption">
-                                                              <%= image_tag "service-hosting.jpg" %>
-                                                            </span>
-                                                        </div>
-
-                                                        <div class="col-sm-6">
-                                                            <div class="content-wrapper">
-                                                                <h3>Dedicated Hosting</h3>
-
-                                                                <span class="small-text">Cost starts at $10.00</span>
-
-                                                                <div class="detail-wrapper">
-                                                                    <ul class="detail">
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Dedicated IP</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> SSL Certificate</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Domain Privacy</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Site Backup Pro</li>
-                                                                    </ul>
-
-                                                                    <ul class="detail">
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Renewal Price</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Available CPUs</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <p>The web is the most powerful resource on the planet, and we're here to help you harness it. Cloud Sites includes our renowned 24/7 support so you can always get the help you need, right when you need it.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div role="tabpanel" class="tab-pane fade" id="cloud">
-                                        <div class="service-content text-left">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <span class="caption">
-                                                              <%= image_tag "service-hosting.jpg" %>
-                                                            </span>
-                                                        </div>
-
-                                                        <div class="col-sm-6">
-                                                            <div class="content-wrapper">
-                                                                <h3>Cloud Hosting</h3>
-
-                                                                <span class="small-text">Cost starts at $15.00</span>
-
-                                                                <div class="detail-wrapper">
-                                                                    <ul class="detail">
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Dedicated IP</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> SSL Certificate</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Domain Privacy</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Site Backup Pro</li>
-                                                                    </ul>
-
-                                                                    <ul class="detail">
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Renewal Price</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Available CPUs</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <p>The web is the most powerful resource on the planet, and we're here to help you harness it. Cloud Sites includes our renowned 24/7 support so you can always get the help you need, right when you need it.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div role="tabpanel" class="tab-pane fade" id="wordpress">
-                                        <div class="service-content text-left">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <span class="caption">
-                                                              <%= image_tag "service-hosting.jpg" %>
-                                                            </span>
-                                                        </div>
-
-                                                        <div class="col-sm-6">
-                                                            <div class="content-wrapper">
-                                                                <h3>Wordpress Hosting</h3>
-
-                                                                <span class="small-text">Cost starts at $18.00</span>
-
-                                                                <div class="detail-wrapper">
-                                                                    <ul class="detail">
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Dedicated IP</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> SSL Certificate</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Domain Privacy</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Site Backup Pro</li>
-                                                                    </ul>
-
-                                                                    <ul class="detail">
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Renewal Price</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Available CPUs</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <p>The web is the most powerful resource on the planet, and we're here to help you harness it. Cloud Sites includes our renowned 24/7 support so you can always get the help you need, right when you need it.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div role="tabpanel" class="tab-pane fade" id="vps">
-                                        <div class="service-content text-left">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <span class="caption">
-                                                              <%= image_tag "service-hosting.jpg" %>
-                                                            </span>
-                                                        </div>
-
-                                                        <div class="col-sm-6">
-                                                            <div class="content-wrapper">
-                                                                <h3>Vps Hosting</h3>
-
-                                                                <span class="small-text">Cost starts at $12.00</span>
-
-                                                                <div class="detail-wrapper">
-                                                                    <ul class="detail">
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Dedicated IP</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> SSL Certificate</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Domain Privacy</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Site Backup Pro</li>
-                                                                    </ul>
-
-                                                                    <ul class="detail">
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Renewal Price</li>
-                                                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Available CPUs</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <p>The web is the most powerful resource on the planet, and we're here to help you harness it. Cloud Sites includes our renowned 24/7 support so you can always get the help you need, right when you need it.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- row -->
-                    </div> <!-- service-wrapper -->
-                </div>
-            </div>
-        </div>
-    </section> <!-- service-section -->
-
-
 
     <section class="process-section section-padding">
         <div class="container">

@@ -6,7 +6,7 @@ jQuery(function ($) {
     // -------------------------------------------------------------
     //      Sticky Menu
     // -------------------------------------------------------------
-        
+
         (function () {
             var nav = $('.navbar');
             var scrolled = false;
@@ -81,7 +81,7 @@ jQuery(function ($) {
 
 
     // -------------------------------------------------------------
-    //      Chat-Box 
+    //      Chat-Box
     // -------------------------------------------------------------
 
         (function () {
@@ -103,7 +103,7 @@ jQuery(function ($) {
 
 
     // -------------------------------------------------------------
-    //      Login-Box 
+    //      Login-Box
     // -------------------------------------------------------------
 
         (function () {
@@ -122,7 +122,7 @@ jQuery(function ($) {
             });
         }());
 
-    
+
 
     // -------------------------------------------------------------
     //      LightBox-Js
@@ -157,7 +157,7 @@ jQuery(function ($) {
                 hideTimerBar:"on"
             });
         }
-       
+
 
 
 
@@ -199,7 +199,7 @@ jQuery(function ($) {
         if ($('.client-carousel').length) {
             $('.client-carousel').owlCarousel({
                 loop:true,
-                autoplay:true,
+                autoplay:false,
                 autoplayTimeout: 3000,
                 margin:10,
                 nav:true,
@@ -229,7 +229,7 @@ jQuery(function ($) {
         if ($('.data-center-carousel').length) {
             $('.data-center-carousel').owlCarousel({
                 loop:true,
-                autoplay:true,
+                autoplay:false,
                 autoplayTimeout: 3000,
                 margin:30,
                 nav:false,
@@ -258,7 +258,7 @@ jQuery(function ($) {
         if ($('.information-carousel').length) {
             $('.information-carousel').owlCarousel({
                 loop:true,
-                autoplay:true,
+                autoplay:false,
                 autoplayTimeout: 3000,
                 margin:30,
                 nav:false,
@@ -285,7 +285,7 @@ jQuery(function ($) {
     // -------------------------------------------------------------
     //      Offer-Section-Slider
     // -------------------------------------------------------------
-    
+
 
         if ($('.offer-carousel').length) {
             $('.offer-carousel').owlCarousel({
@@ -344,7 +344,7 @@ jQuery(function ($) {
     //-------------------------------------------------------
     //  	counter Section
     //-------------------------------------------------------
-       
+
         function funFactCounting() {
             if ($('.counting-section').length) {
                 $('.counting-section').on('inview', function(event, visible, visiblePartX, visiblePartY) {
@@ -374,7 +374,7 @@ jQuery(function ($) {
 
         if ($('#googleMap').length) {
             google.maps.event.addDomListener(window, 'load', init);
-            
+
             function init() {
                 var mapOptions = {
                     // How zoomed in you want the map to start at (always required)
@@ -410,7 +410,7 @@ jQuery(function ($) {
                             {"featureType": "water","elementType": "geometry.fill","stylers": [{"color": "#3065b2"}]},
                             {"featureType": "water","elementType": "geometry.stroke","stylers": [{"color": "#3065b2"}]}]};
 
-                            // Get the HTML DOM element that will contain your map 
+                            // Get the HTML DOM element that will contain your map
                             var mapElement = document.getElementById('googleMap');
 
                             // Create the Google Map using our element and options defined above
@@ -428,7 +428,7 @@ jQuery(function ($) {
 
         if ($('#googleMap-Two').length) {
             google.maps.event.addDomListener(window, 'load', init);
-            
+
             function init() {
                 var mapOptions = {
                     // How zoomed in you want the map to start at (always required)
@@ -464,7 +464,7 @@ jQuery(function ($) {
                             {"featureType": "water","elementType": "geometry.fill","stylers": [{"color": "#3065b2"}]},
                             {"featureType": "water","elementType": "geometry.stroke","stylers": [{"color": "#3065b2"}]}]};
 
-                            // Get the HTML DOM element that will contain your map 
+                            // Get the HTML DOM element that will contain your map
                             var mapElement = document.getElementById('googleMap-Two');
 
                             // Create the Google Map using our element and options defined above
