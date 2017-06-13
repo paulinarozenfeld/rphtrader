@@ -61,7 +61,7 @@ a,
   transition: 0.5s; }
 
 /* =========================================================
-        Typography 
+        Typography
 ============================================================ */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Dosis", sans-serif;
@@ -131,7 +131,7 @@ ul li {
   list-style: none; }
 
 /* =========================================================
-        Button STYLE 
+        Button STYLE
 ============================================================ */
 .btn {
   font-family: "Roboto", sans-serif;
@@ -243,7 +243,7 @@ button,
   background-color: #1379bb; }
 
 /* =========================================================
-        Global Classes 
+        Global Classes
 ============================================================ */
 .no-margin {
   margin: 0; }
@@ -270,7 +270,7 @@ button,
   margin-right: 30px; }
 
 /* =========================================================
-        FORM STYLE 
+        FORM STYLE
 ============================================================ */
 .form-control:focus {
   box-shadow: none; }
@@ -297,7 +297,7 @@ textarea, select {
   border-radius: 0px 0px 0px 0px; }
 
 /* =========================================================
-        Pagination STYLE 
+        Pagination STYLE
 ============================================================ */
 .bottom-nevigation .pagination li.active > a {
   color: #FFFFFF;
@@ -328,7 +328,7 @@ textarea, select {
   background-color: transparent; }
 
 /* =========================================================
-        Box Layout STYLE 
+        Box Layout STYLE
 ============================================================ */
 .boxLayout, .box-layout {
   margin: 0 auto;
@@ -378,7 +378,7 @@ textarea, select {
         padding: 80px 15px 60px; } }
 
 /* =========================================================
-        Section-Title STYLE 
+        Section-Title STYLE
 ============================================================ */
 .header-title {
   background: url(../images/sub/share-host-bg.jpg) no-repeat center top;
@@ -413,7 +413,7 @@ textarea, select {
         line-height: 30px; } }
 
 /* =========================================================
-        Page-Title STYLE 
+        Page-Title STYLE
 ============================================================ */
 .page-title {
   background-color: #dfdbce;
@@ -427,13 +427,13 @@ textarea, select {
       color: #8e8b81; }
 
 /* =========================================================
-        Sub-Page-STYLE 
+        Sub-Page-STYLE
 ============================================================ */
 .sub-page .header-section .navbar {
   background-color: #FFFFFF; }
 
 /* =========================================================
-        Header STYLE 
+        Header STYLE
 ============================================================ */
 @media only screen and (max-width: 991px) {
   .header-section {
@@ -565,7 +565,7 @@ textarea, select {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../images/logo-bg.jpg) no-repeat;
+    background: asset-data-url("logo-bg.jpg") no-repeat;
     width: 660px;
     height: 90px;
     z-index: 1; }
@@ -840,7 +840,7 @@ textarea, select {
       box-shadow: 0 3px #c76708; }
 
 /* =========================================================
-        Slider STYLE 
+        Slider STYLE
 ============================================================ */
 .slider-section {
   margin-top: 88px; }
@@ -884,7 +884,7 @@ textarea, select {
       margin-left: 10px; }
 
 /* =========================================================
-        CTA-Section STYLE 
+        CTA-Section STYLE
 ============================================================ */
 @media only screen and (max-width: 767px) {
   .call-to-action {
@@ -920,7 +920,7 @@ textarea, select {
       width: 80px; } }
 
 /* =========================================================
-        Package-Section STYLE 
+        Package-Section STYLE
 ============================================================ */
 .package-section .package-wrapper {
   border: 3px solid #3575d3;
@@ -1037,7 +1037,7 @@ textarea, select {
       padding: 6px 25px; } }
 
 /* =========================================================
-        Mission-Section STYLE 
+        Mission-Section STYLE
 ============================================================ */
 .mission-section {
   padding: 70px 0 80px; }
@@ -1121,7 +1121,7 @@ textarea, select {
           margin-bottom: 20px; } }
 
 /* =========================================================
-        Team-Section STYLE 
+        Team-Section STYLE
 ============================================================ */
 .team-section {
   background-color: #dfdbce !important;
@@ -1218,7 +1218,7 @@ textarea, select {
       color: #f5800d; }
 
 /* =========================================================
-        Join-Section STYLE 
+        Join-Section STYLE
 ============================================================ */
 .joining-section {
   background: url(../images/join-bg.png) no-repeat;
@@ -1265,7 +1265,7 @@ textarea, select {
         margin-top: 10px; } }
 
 /* =========================================================
-        Domain-Section STYLE 
+        Domain-Section STYLE
 ============================================================ */
 .domain-section {
   position: relative;
@@ -1454,7 +1454,7 @@ textarea, select {
           padding: 6px 30px; } }
 
 /* =========================================================
-        Searching-Section STYLE 
+        Searching-Section STYLE
 ============================================================ */
 .searching-section {
   position: relative;
@@ -1658,7 +1658,7 @@ textarea, select {
           width: 400px; } }
 
 /* =========================================================
-        Priceing-Section STYLE 
+        Priceing-Section STYLE
 ============================================================ */
 .priceing-section .section-title p {
   color: #666666; }
@@ -1990,7 +1990,7 @@ textarea, select {
         margin-left: 10px; }
 
 /* =========================================================
-        Video-Section STYLE 
+        Video-Section STYLE
 ============================================================ */
 .video-section {
   color: #FFFFFF;
@@ -2027,7 +2027,7 @@ textarea, select {
           line-height: 70px; } }
 
 /* =========================================================
-        Process-Section STYLE 
+        Process-Section STYLE
 ============================================================ */
 .process-section .process-wrapper {
   padding-top: 12px; }
@@ -2107,11 +2107,11 @@ textarea, select {
         padding: 0 15px !important; } }
 
 /* =========================================================
-        Counting-Section STYLE 
+        Counting-Section STYLE
 ============================================================ */
 .counting-section {
   position: relative;
-  background: url(../images/counter-bg.jpg) no-repeat center top;
+  background: asset-data-url("counter-bg.jpg") no-repeat center top;
   background-size: cover;
   background-attachment: fixed;
   padding: 185px 0 145px; }
@@ -2164,7 +2164,7 @@ textarea, select {
             font-size: 20px; } }
 
 /* =========================================================
-        Testimonial-Section STYLE 
+        Testimonial-Section STYLE
 ============================================================ */
 .testimonial-section #testimonial-carousel-two {
   padding-bottom: 85px; }
@@ -2257,7 +2257,7 @@ textarea, select {
       color: #FFFFFF; }
 
 /* =========================================================
-        Achivement-Section STYLE 
+        Achivement-Section STYLE
 ============================================================ */
 .achivement-section .section-title {
   margin-bottom: 35px; }
@@ -2310,7 +2310,7 @@ textarea, select {
       padding: 8px 20px; } }
 
 /* =========================================================
-        Client-Section STYLE 
+        Client-Section STYLE
 ============================================================ */
 .client-section {
   background: url(../images/icon-bg.jpg) no-repeat center top;
@@ -2321,7 +2321,7 @@ textarea, select {
     margin: 0 auto; }
 
 /* =========================================================
-        Information-Section STYLE 
+        Information-Section STYLE
 ============================================================ */
 .information-section .section-title {
   margin-bottom: 70px; }
@@ -2396,10 +2396,10 @@ textarea, select {
     background: #ced5df; }
 
 /* =========================================================
-        Service-Section STYLE 
+        Service-Section STYLE
 ============================================================ */
 .service-section {
-  background: url(../images/service-bg.jpg) no-repeat center top;
+  background: asset-data-url("service-bg.jpg") no-repeat center top;
   background-size: cover; }
   .service-section .section-title {
     margin-bottom: 60px; }
@@ -2539,7 +2539,7 @@ textarea, select {
           margin-top: 10px; } }
 
 /* =========================================================
-        Review-Section STYLE 
+        Review-Section STYLE
 ============================================================ */
 .review-section .section-title {
   margin-bottom: 45px; }
@@ -2620,7 +2620,7 @@ textarea, select {
   margin: 0 7px; }
 
 /* =========================================================
-        Faq-Section STYLE 
+        Faq-Section STYLE
 ============================================================ */
 .faq-section {
   position: relative;
@@ -2763,7 +2763,7 @@ textarea, select {
         width: 400px; } }
 
 /* =========================================================
-        Artical-Section STYLE 
+        Artical-Section STYLE
 ============================================================ */
 .artical-section .artical-wrapper {
   margin-top: 35px; }
@@ -2824,11 +2824,11 @@ textarea, select {
           font-size: 14px; } }
 
 /* =========================================================
-        Subscribe-Section STYLE 
+        Subscribe-Section STYLE
 ============================================================ */
 .subscribe-section {
   position: relative;
-  background: url(../images/subscribe/subscribe-bg.jpg) no-repeat center;
+  background: asset-data-url("subscribe-bg.jpg") no-repeat center;
   background-size: cover;
   padding: 65px 0 90px; }
   @media only screen and (max-width: 767px) {
@@ -2845,7 +2845,7 @@ textarea, select {
     height: 300px;
     top: 0;
     left: 0;
-    background: url(../images/subscribe/cloud-1.png) no-repeat;
+    background: asset-data-url("cloud-1.png") no-repeat;
     z-index: 1;
     animation: cloud-animation 90s linear infinite;
     -ms-animation: cloud-animation 90s linear infinite;
@@ -2866,7 +2866,7 @@ textarea, select {
     height: 220px;
     bottom: 0;
     right: 100px;
-    background: url(../images/subscribe/cloud-2.png) no-repeat;
+    background: asset-data-url("cloud-2.png") no-repeat;
     z-index: 1;
     animation: cloud-animation-two 90s linear infinite;
     -ms-animation: cloud-animation-two 90s linear infinite;
@@ -2948,7 +2948,7 @@ textarea, select {
           padding: 4px 25px; } }
 
 /* =========================================================
-        Account-Section STYLE 
+        Account-Section STYLE
 ============================================================ */
 .account-section {
   padding: 170px 0 120px; }
@@ -3057,7 +3057,7 @@ textarea, select {
               margin: 20px 0 10px; } }
 
 /* =========================================================
-        Hosting-Section STYLE 
+        Hosting-Section STYLE
 ============================================================ */
 .hosting-section {
   padding-top: 178px !important; }
@@ -3190,7 +3190,7 @@ textarea, select {
         padding-left: 30px !important; } }
 
 /* =========================================================
-        Server-Space-Section STYLE 
+        Server-Space-Section STYLE
 ============================================================ */
 .server-space-section {
   background: url(../images/space-bg.jpg) no-repeat center top;
@@ -3295,7 +3295,7 @@ textarea, select {
           margin-bottom: 12px; } }
 
 /* =========================================================
-        Performance-Section STYLE 
+        Performance-Section STYLE
 ============================================================ */
 .performance-section {
   background: url(../images/c-video-bg.jpg) no-repeat center;
@@ -3346,7 +3346,7 @@ textarea, select {
           font-size: 16px; } }
 
 /* =========================================================
-        Option-Section STYLE 
+        Option-Section STYLE
 ============================================================ */
 .option-section .option-tab .nav-tabs {
   border: 0;
@@ -3441,7 +3441,7 @@ textarea, select {
           line-height: 24px; } }
 
 /* =========================================================
-        Hosting-Price-Section STYLE 
+        Hosting-Price-Section STYLE
 ============================================================ */
 .hosting-price-section .hosting-carousel .carousel-wrapper {
   border: 3px solid #3575d3;
@@ -3528,7 +3528,7 @@ textarea, select {
     background-color: #d4d8e0; }
 
 /* =========================================================
-        Optimized-Section STYLE 
+        Optimized-Section STYLE
 ============================================================ */
 .optimized-section {
   min-height: 500px;
@@ -3620,7 +3620,7 @@ textarea, select {
       max-width: 100%; }
 
 /* =========================================================
-        Support-Section STYLE 
+        Support-Section STYLE
 ============================================================ */
 .support-section .nav-tabs {
   border: 0;
@@ -3853,7 +3853,7 @@ textarea, select {
       border-color: #e6e6e6; }
 
 /* =========================================================
-        Find-Support-Section STYLE 
+        Find-Support-Section STYLE
 ============================================================ */
 .find-support-section h2 {
   font-size: 40px;
@@ -3909,7 +3909,7 @@ textarea, select {
       padding: 4px 22px; } }
 
 /* =========================================================
-        Google-Map STYLE 
+        Google-Map STYLE
 ============================================================ */
 .map-section {
   padding-bottom: 120px; }
@@ -4028,7 +4028,7 @@ textarea, select {
               margin: 20px 0 10px; } }
 
 /* =========================================================
-        Data-Center STYLE 
+        Data-Center STYLE
 ============================================================ */
 .data-center-section .data-center-carousel {
   margin-top: 40px; }
@@ -4082,7 +4082,7 @@ textarea, select {
       background-color: #3575d3; }
 
 /* =========================================================
-        Contact-Section STYLE 
+        Contact-Section STYLE
 ============================================================ */
 .contact-section .section-title {
   margin-bottom: 75px; }
@@ -4116,7 +4116,7 @@ textarea, select {
       line-height: 27px; } }
 
 /* =========================================================
-        Offer-Section STYLE 
+        Offer-Section STYLE
 ============================================================ */
 .offer-section {
   margin-top: -85px; }
@@ -4157,7 +4157,7 @@ textarea, select {
       background-color: #d4d8e0; }
 
 /* =========================================================
-        Domain-List-Section STYLE 
+        Domain-List-Section STYLE
 ============================================================ */
 .domain-list-section .section-title {
   margin-bottom: 50px; }
@@ -4226,7 +4226,7 @@ textarea, select {
       color: #f6744d; }
 
 /* =========================================================
-        News-Section  STYLE 
+        News-Section  STYLE
 ============================================================ */
 .news-section .news-left-bar {
   margin-right: 25px; }
@@ -4753,7 +4753,7 @@ textarea, select {
             font-size: 16px; } }
 
 /* =========================================================
-        Footer STYLE 
+        Footer STYLE
 ============================================================ */
 .footer-section {
   position: relative;
@@ -4898,10 +4898,10 @@ textarea, select {
         text-align: center; } }
 
 /* =========================================================
-        Home-Page-One-STYLE 
+        Home-Page-One-STYLE
 ============================================================ */
 /* =========================================================
-        Home-Page-Two-STYLE 
+        Home-Page-Two-STYLE
 ============================================================ */
 .homePageTwo .header-section {
   position: relative; }
@@ -4979,7 +4979,7 @@ textarea, select {
   background-color: #f3f2f0; }
 
 /* =========================================================
-        Home-Page-Three-STYLE 
+        Home-Page-Three-STYLE
 ============================================================ */
 .homePageThree .header-section {
   position: relative; }
@@ -5160,19 +5160,19 @@ textarea, select {
       padding: 15px; } }
 
 /* =========================================================
-        Single-Home-Page-One-STYLE 
+        Single-Home-Page-One-STYLE
 ============================================================ */
 /* =========================================================
-        Single-Home-Page-Two-STYLE 
+        Single-Home-Page-Two-STYLE
 ============================================================ */
 /* =========================================================
-        Single-Home-Three-STYLE 
+        Single-Home-Three-STYLE
 ============================================================ */
 .singlePageThree .header-section .navbar {
   position: absolute; }
 
 /* =========================================================
-        Shared-Hosting-Page-STYLE 
+        Shared-Hosting-Page-STYLE
 ============================================================ */
 .share-host-page .priceing-section {
   padding-top: 120px; }
@@ -5184,20 +5184,20 @@ textarea, select {
       padding-top: 70px; } }
 
 /* =========================================================
-        Testimonial-Page-STYLE 
+        Testimonial-Page-STYLE
 ============================================================ */
 .testimonial-page .testimonial-section {
   padding-top: 0; }
 
 /* =========================================================
-        Single-news-Page-STYLE 
+        Single-news-Page-STYLE
 ============================================================ */
 @media only screen and (max-width: 991px) {
   .single-news-page .news-section .single-news {
     margin-bottom: 0; } }
 
 /* =========================================================
-        Domain-Page-STYLE 
+        Domain-Page-STYLE
 ============================================================ */
 .domain-page .header-title {
   padding: 235px 0 165px; }
@@ -5255,7 +5255,7 @@ textarea, select {
           padding: 6px 15px; } }
 
 /* =========================================================
-        404-Page-STYLE 
+        404-Page-STYLE
 ============================================================ */
 .error-page {
   background: url(../images/404.jpg) no-repeat;
@@ -5295,7 +5295,7 @@ textarea, select {
           padding: 12px 40px; } }
 
 /* =========================================================
-        Color-Switcher-STYLE 
+        Color-Switcher-STYLE
 ============================================================ */
 .style-switcher-box {
   background-color: #FFFFFF;
@@ -5423,7 +5423,7 @@ textarea, select {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 /* =========================================================
-        Chat-Box STYLE 
+        Chat-Box STYLE
 ============================================================ */
 .support-box #open-box-two {
   position: fixed;
@@ -5500,7 +5500,7 @@ textarea, select {
         color: #FFFFFF; }
 
 /* =========================================================
-        Scroll-To-Top-STYLE 
+        Scroll-To-Top-STYLE
 ============================================================ */
 #toTop {
   position: fixed;
@@ -5519,7 +5519,7 @@ textarea, select {
   z-index: 999; }
 
 /* =========================================================
-        Preloader-STYLE 
+        Preloader-STYLE
 ============================================================ */
 #preloader {
   background-color: #FFFFFF;
