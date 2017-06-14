@@ -1,0 +1,95 @@
+<div id="registerdiv">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { id: "msform", class: "register-form-home" }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <ul id="progressbar">
+      <li class="active">Account Type</li>
+      <li>Account Setup</li>
+      <li>You're Done!</li>
+    </ul>
+
+    <fieldset>
+      <div class="field role">
+        <%= f.label "You are a" %>
+        <%= f.select :role, [ 'Pharmacy', 'Pharmacist' ], :prompt => 'Select One' %>
+      </div>
+      <input type="button" name="close" class="action-button cancel" value="Cancel">
+      <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+
+    <fieldset>
+      <div class="field first-name">
+        <%= f.label :first_name %><br />
+        <%= f.text_field :first_name, autofocus: true %>
+      </div>
+
+      <div class="field last-name">
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name %>
+      </div>
+
+      <div class="field pharmacy-name">
+        <%= f.label :pharmacy_name %><br />
+        <%= f.text_field :pharmacy_name %>
+      </div>
+
+      <div class="field codename">
+        <%= f.label :Codename %><br />
+        <p>(Optional: Note that without a codename, your pharmacy name will be visible to job applicants!)</p>
+        <%= f.text_field :alias %>
+      </div>
+
+      <div class="field email-signup">
+        <%= f.label :email %><br />
+        <%= f.email_field :email %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <input type="button" name="close" class="action-button cancel" value="Cancel">
+      <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+
+    <fieldset>
+      <h3>Awesome Work!</h3>
+      <p>that didn't take long at all</p>
+      <div class="actions">
+        <%= f.submit "Let's Go" %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $( '.role' ).on( 'change', function( e ) {
+    if ( e.target.value === "Pharmacist" ) {
+      $( '.pharmacy-name' ).hide();
+      $( '.codename' ).hide();
+    } else {
+      $( '.first-name' ).hide();
+      $( '.last-name' ).hide();
+    }
+  });
+
+  $( window ).keydown( function( event ) {
+    if( event.keyCode == 13 ) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
+  $( '.cancel' ).on( 'click', function( e ) {
+    $( '#registerdiv' ).hide();
+  });
+</script>
