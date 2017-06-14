@@ -26,106 +26,39 @@
 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active dropdown"><a href="#">Home <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="index.html">Home One</a></li>
-                                <li><a href="index-two.html">Home Two</a></li>
-                                <li class="active"><a href="index-three.html">Home Three</a></li>
-                                <li><a href="#">Single-Home</a>
-                                    <ul class="sub-dropdown">
-                                        <li><a href="single-one.html">Home-1</a></li>
-                                        <li><a href="single-two.html">Home-2</a></li>
-                                        <li><a href="single-three.html">Home-3</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <li class="active">
+                          <%= link_to "Home", root_path %>
                         </li>
 
-                        <li class="dropdown"><a href="#">Domain <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="domain.html">Domain</a></li>
-                                <li><a href="domain-management.html">Domain-Management</a></li>
-                            </ul>
-                        </li>
+                        <% if user_signed_in? %>
+                          <li class="dropdown"><a href="#">Account <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="domain.html">Inbox</a></li>
+                                  <li><a href="domain-management.html">Availability</a></li>
+                                  <li><a href="domain-management.html">Resume</a></li>
+                              </ul>
+                          </li>
+                        <% end %>
 
-                        <li class="dropdown"><a href="#">Hosting <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="hosting.html">Hosting</a></li>
-                                <li><a href="cloud-hosting.html">Cloud-hosting</a></li>
-                                <li><a href="dedicated-hosting.html">Dedicated-hosting</a></li>
-                                <li><a href="shared-hosting.html">Shared-Hosting</a></li>
-                                <li><a href="hosting-management.html">Hosting-Management</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="megadrop"><a href="#">Mega menu <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="megamenu">
-                                <li>
-                                    <div id="menu-carousel" class="carousel slide" data-ride="carousel">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#menu-carousel" data-slide-to="0" class="active"></li>
-                                            <li data-target="#menu-carousel" data-slide-to="1"></li>
-                                            <li data-target="#menu-carousel" data-slide-to="2"></li>
-                                        </ol>
-
-                                        <div class="carousel-inner" role="listbox">
-                                            <div class="item active">
-                                              <%= image_tag( 's1.jpg' ) %>
-                                            </div>
-
-                                            <div class="item">
-                                              <%= image_tag( 's2.jpg' ) %>
-                                            </div>
-
-                                            <div class="item">
-                                              <%= image_tag( 's3.jpg' ) %>
-                                            </div>
-                                        </div>
-                                    </div> <!-- menu-carousel -->
-                                </li>
-
-                                <li class="mega-submenu3">
-                                    <ul class="dropdown">
-                                        <li><a href="box-single-one.html">Box Layout One</a></li>
-                                        <li><a href="box-single-two.html">Box Layout Two</a></li>
-                                        <li><a href="box-single-three.html">Box Layout Three</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="mega-submenu">
-                                    <ul class="dropdown">
-                                        <li><a href="account.html">Account</a></li>
-                                        <li><a href="affiliate.html">Affiliate</a></li>
-                                        <li><a href="data-center.html">Data Center</a></li>
-                                        <li><a href="support.html">Support</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="mega-submenu2">
-                                    <ul class="dropdown">
-                                        <li><a href="testimonial.html">Testimonial</a></li>
-                                        <li><a href="404.html">404-Page</a></li>
-                                        <li><a href="single-one.html">Single Home One</a></li>
-                                        <li><a href="single-two.html">Single Home Two</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#">News <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="news-single.html">News-Single</a></li>
-                                <li><a href="news-sidebar.html">News-Sidebar</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#">How We Work</a></li>
 
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
 
                     <div class="chat-box inline-block">
-                        <button id="open-box" class="btn btn-primary"><i class="fa fa-comments" aria-hidden="true"></i> Live Chat</button>
+                      <% if user_signed_in? %>
+                        <%= link_to destroy_user_session_path, method: :delete do %>
+                          <button class="btn btn-primary"><i class="fa fa-sign-out" aria-hidden="true"></i>  &nbsp;Logout</button>
+                        <% end %>
+                      <% else %>
+                        <%= link_to new_user_session_path do %>
+                          <button class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i>  &nbsp;Login</button>
+                        <% end %>
+                        &nbsp;
+                        <%= link_to new_user_registration_path do %>
+                          <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>  &nbsp;Sign Up</button>
+                        <% end %>
+                      <% end %>
                     </div>
                 </div><!--/.nav-collapse -->
             </div> <!-- container -->
@@ -223,11 +156,11 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="domain-wrapper">
-                        <h3>Check Pharmacies Looking For You In Your Area!</h3>
+                        <h3>Check Which Pharmacies Are Looking For You!</h3>
 
                         <div class="domain-bar">
                             <form class="subscribeForm" method="POST">
-                                <input class="domainSearchBar inline-block" value="ex: cloudhost" onblur="if(this.value=='')this.value='ex: cloudhost'" onfocus="if(this.value=='ex: cloudhost')this.value=''" id="domainSearchBar" name="email" type="email">
+                                <input class="domainSearchBar inline-block" value="ex: 90210" onblur="if(this.value=='')this.value='ex: 90210'" onfocus="if(this.value=='ex: 90210')this.value=''" id="domainSearchBar" name="email" type="email">
                                 <button type="submit" class="subscribeBtn inline-block">Find</button>
                             </form>
                         </div> <!-- search-bar -->
