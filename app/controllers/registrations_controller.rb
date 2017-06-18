@@ -8,6 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     if user.save
       sign_in( :user, user )
+      Full.create( sunday: "inactive", monday: "inactive", tuesday: "inactive", wednesday: "inactive", thursday: "inactive", friday: "inactive", saturday: "inactive", user_id: current_user.id )
       redirect_to user_path( user )
     end
   end
