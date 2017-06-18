@@ -1,0 +1,188 @@
+<%= stylesheet_link_tag    '/materialize.css' %>
+<%= stylesheet_link_tag    '/mob.css' %>
+<%= stylesheet_link_tag    '/style_admin.css' %>
+<body>
+    <!--== MAIN CONTRAINER ==-->
+    <div class="container-fluid sb1">
+        <div class="row">
+            <!--== LOGO ==-->
+            <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
+                <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
+                <a href="index.html" class="logo"><%= image_tag "logo-admin.png" %>
+                </a>
+            </div>
+            <!--== SEARCH ==-->
+            <div class="col-md-6 col-sm-6 mob-hide">
+
+            </div>
+            <!--== NOTIFICATION ==-->
+            <div class="col-md-2 tab-hide">
+
+            </div>
+            <!--== MY ACCCOUNT ==-->
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <!-- Dropdown Trigger -->
+                <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><%= image_tag "6.png" %>My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a>
+
+                <!-- Dropdown Structure -->
+                <ul id='top-menu' class='dropdown-content top-menu-sty'>
+                    <li>
+                      <%= link_to user_path( current_user ), class: "waves-effect" do %>
+                        <i class="fa fa-list-ul" aria-hidden="true"></i>
+                        My Profile
+                      <% end %>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <%= link_to destroy_user_session_path, method: :delete, class: "ho-dr-con-last waves-effect" do %>
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Logout
+                      <% end %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--== BODY CONTNAINER ==-->
+    <div class="container-fluid sb2">
+        <div class="row">
+            <div class="sb2-1">
+                <!--== USER INFO ==-->
+                <div class="sb2-12">
+                    <ul>
+                        <li><%= image_tag "placeholder.jpg" %></li>
+                        <li>
+                            <h5><%= current_user.first_name %> <%= current_user.last_name %><span> Santa Ana, CA</span></h5>
+                        </li>
+                    </ul>
+                </div>
+                <!--== LEFT MENU ==-->
+                <div class="sb2-13">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                          <%= link_to user_path( current_user ), class: "waves-effect menu-active" do %>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            Profile
+                          <% end %>
+                        </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-envelope" aria-hidden="true"></i> Mailbox</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="package-all.html"><i class="fa fa-envelope-o" aria-hidden></i> Inbox</a></li>
+                                    <li><a href="package-add.html"><i class="fa fa-mail-forward" aria-hidden></i> Sent</a></li>
+                                    <li><a href="package-cat-all.html"><i class="fa fa-trash" aria-hidden></i> Trash</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sb2-2">
+                <div class="sb2-2-2">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Profile</a>
+                        </li>
+                    </ul>
+                </div>
+                <%= render 'user-info' %>
+                <div class="schedule-wrapper">
+                  <div class="schedule-header">
+                    <h3 class="avail-head">My Availibility</h3>
+                  </div>
+                  <div class="space-div">
+                  </div>
+                  <div class="schedule-props-wrapper">
+                    <div class="selector-type-ep">
+                      <h4>Select Type of Employment:</h4>
+                      <br>
+                      <%= form_for @user do |f| %>
+                        <%= f.select :type_ep, [ "Full Time / Part Time", "Per Diem" ], prompt: "Choose One" %>
+                      <% end %>
+                    </div>
+                    <div class="schedule-props">
+                      <%= render 'fulls_sched_buildout' %>
+                      <div class="image-right-toons">
+                        <%= image_tag "yay-employees.png", class: "employees-yay-image" %>
+                      </div>
+                      <div id="calendar"></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--======== SCRIPT FILES =========-->
+    <%= javascript_include_tag '/materialize.min.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag '/custom_admin.js', 'data-turbolinks-track': 'reload' %>
+</body>
+
+<script type="text/javascript">
+  $('#calendar').fullCalendar({});
+
+  $( '#calendar' ).hide();
+
+  $( '.calendar-help' ).hide();
+
+  $( 'document' ).ready( function() {
+    $( '.caret' ).html( "" )
+  })
+
+  $( '.schedule-props-wrapper form select' ).on( 'change', function( e ) {
+    $( '.schedule-props-wrapper form' ).submit();
+  })
+
+  $( '.schedule-props-wrapper form' ).on( 'submit', function( e ) {
+    e.preventDefault();
+
+    var thisForm = e.target;
+
+    var type = thisForm.method;
+    var url = thisForm.action;
+    var data = $( thisForm ).serialize()
+
+    $.ajax({
+      type: type,
+      url: url,
+      data: data
+    }).done( function( response ) {
+      var typeEP = $( response ).html()
+
+      if ( typeEP === "diem" ) {
+        $( '#week' ).hide();
+        $( '#calendar' ).show();
+      } else {
+        $( '#calendar' ).hide();
+        $( '#week' ).show();
+      };
+    });
+  });
+
+  $( '.week-button' ).on( 'click', function( e ) {
+    var target = e.target;
+    var dayElement = target.children[ 1 ].children[ 0 ];
+    var day = $( dayElement ).html();
+
+    var type = 'patch';
+    var data = "fullsId=" + target.children[ 0 ].value + "&day=" + day;
+    var url = '/fulls/' + data;
+
+    $.ajax({
+      type: type,
+      url: url,
+      data: data
+    }).done( function( response ) {
+      var color = $( response ).html();
+      var thisURL = this.url.split( '=' );
+      var thisClass = '.' + thisURL[ thisURL.length - 1 ].toLowerCase();
+
+      if ( color === "green" ) {
+        $( thisClass ).addClass( 'check-color-grn' );
+      } else {
+        $( thisClass ).removeClass( 'check-color-grn' );
+      };
+    });
+  });
+</script>

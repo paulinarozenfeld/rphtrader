@@ -10,8 +10,9 @@
 
     <fieldset>
       <div class="field role">
-        <%= f.label "You are a" %>
-        <%= f.select :role, [ 'Pharmacy', 'Pharmacist' ], :prompt => 'Select One' %>
+        <%= f.label "I Am Looking For..." %>
+        <br>
+        <%= f.select :role, [ 'Employees', 'A Job' ], :prompt => 'Select One' %>
       </div>
       <input type="button" name="close" class="action-button cancel" value="Cancel">
       <input type="button" name="next" class="next action-button" value="Next" />
@@ -29,6 +30,7 @@
       </div>
 
       <div class="field pharmacy-name">
+        <h3>Give Us Some Details About Your Pharmacy:</h3>
         <%= f.label :pharmacy_name %><br />
         <%= f.text_field :pharmacy_name %>
       </div>
@@ -73,7 +75,7 @@
 
 <script type="text/javascript">
   $( '.role' ).on( 'change', function( e ) {
-    if ( e.target.value === "Pharmacist" ) {
+    if ( e.target.value === "A Job" ) {
       $( '.pharmacy-name' ).hide();
       $( '.codename' ).hide();
     } else {

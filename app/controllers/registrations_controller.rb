@@ -8,7 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     if user.save
       sign_in( :user, user )
-      redirect_to root_path
+      redirect_to user_path( user )
     end
   end
 

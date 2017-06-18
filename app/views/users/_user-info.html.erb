@@ -1,0 +1,62 @@
+<div class="sb2-2-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box-inn-sp">
+                <div class="inn-title">
+                    <h4>Welcome <%= current_user.first_name %></h4>
+                    <p>Here you can adjust your profile to fit your needs</p>
+                </div>
+                <div class="tab-inn">
+                    <form>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="first_name" type="text" value="<%= current_user.first_name %>" class="validate">
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" value="<%= current_user.last_name %>" class="validate">
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="phone" type="text" value="<%= current_user.mobile %>" class="validate">
+                                <label for="phone">Mobile</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="cphone" type="text" value="<%= current_user.home %>" class="validate">
+                                <label for="cphone">Phone</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <select id="position" name="position">
+                                  <option value="Pharmacist">Pharmacist</option>
+                                  <option value="technician">Technician</option>
+                                  <option value="intern">Intern</option>
+                                  <option value="cashier">Cashier</option>
+                                </select>
+                                <label for="position">Position</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="country" type="text" value="<%= current_user.zip %>" class="validate">
+                                <label for="country">Zip Code</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="email" value="<%= current_user.email %>" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="submit" class="waves-effect waves-light btn-large" value="Update">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
