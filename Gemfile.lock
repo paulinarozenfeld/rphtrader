@@ -38,6 +38,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    area (0.10.0)
+      fastercsv (~> 1.5)
     arel (8.0.0)
     bcrypt (3.1.11)
     better_errors (2.1.1)
@@ -69,6 +71,7 @@ GEM
     erubi (1.6.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    fastercsv (1.5.5)
     ffi (1.9.18)
     fullcalendar-rails (3.2.0.0)
       jquery-rails (>= 4.0.5, < 5.0.0)
@@ -198,6 +201,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  area
   better_errors
   byebug
   coffee-rails (~> 4.2)

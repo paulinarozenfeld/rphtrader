@@ -6,7 +6,7 @@
  * Last Changes: 03/09/2016
  * Author: RN53 Themes
  * Email:      rn53themes@gmail.com
- * Website:    http://www.rn53themes.net 
+ * Website:    http://www.rn53themes.net
  -----------------------------------------------*/
 /*-------------------------------------------------
  =  TABLE OF CSS
@@ -111,7 +111,8 @@ a:hover {
     background: #263238;
     color: #fff;
     height: 100%;
-    position: absolute;
+    margin-top: 29px;
+    position: fixed !important;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -172,11 +173,11 @@ a:hover {
     padding-top: 3px;
 }
 .sb2-13 {
-	background: #263238;	
-} 
+	background: #263238;
+}
 .sb2-13 ul {
     /* padding: 20px; */
-    
+
     margin-left: 0px;
     padding-left: 0px;
     margin-bottom: 0px;
@@ -361,7 +362,7 @@ a:hover {
     width: 24px;
     height: 24px;
     /* border: 1px solid #6d6d6d; */
-    
+
     padding: 5px;
     text-align: center;
     border-radius: 20px;
@@ -495,7 +496,7 @@ a:hover {
     list-style-type: none;
     background: #00BCD4;
     /* padding: 5px; */
-    
+
     margin-right: 10px;
 }
 .db-1 ul li:nth-child(1) {
@@ -547,7 +548,7 @@ a:hover {
 .db-2 {
     /* background: #e3e8ea; */
     /* padding: 25px; */
-    
+
     margin-top: 30px;
     position: relative;
     overflow: hidden;
@@ -618,7 +619,7 @@ a:hover {
 }
 .sb2-2-3 {
     /* background:#fff; */
-    
+
     margin-top: 30px;
 }
 .list-img {} .list-img img {
@@ -665,7 +666,7 @@ a:hover {
 }
 .inn-title p {
     /* padding-bottom: 10px; */
-    
+
     color: #929292;
     margin-bottom: 0px;
 }
@@ -761,7 +762,7 @@ a:hover {
 .app-search input {
     border-bottom: 0px !important;
     /* line-height: 7px !important; */
-    
+
     height: 35px !important;
     color: #cecece;
 }
@@ -978,7 +979,7 @@ a:hover {
 .select-pos {
     position: relative;
     /* overflow: hidden; */
-    
+
     display: initial;
 }
 .menu-active{
@@ -992,5 +993,5 @@ a:hover {
     border: 0px;
     display: block;
     pointer-events: none;
-    position: relative;	
+    position: relative;
 }

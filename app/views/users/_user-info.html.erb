@@ -7,55 +7,49 @@
                     <p>Here you can adjust your profile to fit your needs</p>
                 </div>
                 <div class="tab-inn">
-                    <form>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="first_name" type="text" value="<%= current_user.first_name %>" class="validate">
-                                <label for="first_name">First Name</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="last_name" type="text" value="<%= current_user.last_name %>" class="validate">
-                                <label for="last_name">Last Name</label>
-                            </div>
+                    <%= form_for current_user do |f| %>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <%= f.text_field :first_name, value: current_user.first_name, class: "validate" %>
+                          <label for="first_name">First Name</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="phone" type="text" value="<%= current_user.mobile %>" class="validate">
-                                <label for="phone">Mobile</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="cphone" type="text" value="<%= current_user.home %>" class="validate">
-                                <label for="cphone">Phone</label>
-                            </div>
+                        <div class="input-field col s6">
+                          <%= f.text_field :last_name, value: current_user.last_name, class: "validate" %>
+                          <label for="last_name">Last Name</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <select id="position" name="position">
-                                  <option value="" disabled selected>--Choose--</option>
-                                  <option value="Pharmacist">Pharmacist</option>
-                                  <option value="technician">Technician</option>
-                                  <option value="intern">Intern</option>
-                                  <option value="cashier">Cashier</option>
-                                </select>
-                                <label for="position">Position</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="country" type="text" value="<%= current_user.zip %>" class="validate">
-                                <label for="country">Zip Code</label>
-                            </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <%= f.text_field :mobile, value: current_user.mobile, class: "validate" %>
+                          <label for="mobile">Mobile</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="email" type="email" value="<%= current_user.email %>" class="validate">
-                                <label for="email">Email</label>
-                            </div>
+                        <div class="input-field col s6">
+                          <%= f.select( "position", [ "Pharmacist", "Technician", "Intern", "Cashier" ], prompt: "---Please Choose---", html_options: { id: "position" } )%>
+                          <label for="position">Position</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input type="submit" class="waves-effect waves-light btn-large" value="Update">
-                            </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <%= f.text_field :zip, value: current_user.zip, class: "validate" %>
+                          <label for="zip">Zip Code</label>
                         </div>
-                    </form>
+                        <div class="input-field col s6">
+                          <%= f.select( "range", [ 1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ], prompt: "---Please Choose---", html_options: { id: "range" } )%>
+                          <label for="range">Range</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <%= f.email_field :email, value: current_user.email, class: "validate" %>
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                          <div class="input-field col s12">
+                              <%= f.submit "Update", class: "waves-effect waves-light btn-large" %>
+                          </div>
+                      </div>
+                    <% end %>
                 </div>
             </div>
         </div>

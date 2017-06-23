@@ -10,6 +10,14 @@ class UsersController < ApplicationController
     if current_user.role == "A Job"
       @dates_per_diem = []
 
+      if current_user.zip != ""
+        @latlon = current_user.zip.to_latlon.split( ", " )
+      end
+
+      if current_user.range != nil
+        @meters = current_user.range * 1609.344
+      end
+
       if current_user.type_ep == "Per Diem"
         current_user.events.each { | event | @dates_per_diem << event }
       else
@@ -32,6 +40,9 @@ class UsersController < ApplicationController
       else
         render partial: 'diem'
       end
+    else
+      current_user.update_attributes( update_nojs_params )
+      redirect_to user_path( current_user )
     end
   end
 
@@ -39,5 +50,9 @@ class UsersController < ApplicationController
 
       def update_params
         params.require( :user ).permit( :type_ep )
+      end
+
+      def update_nojs_params
+        params.require( :user ).permit( :first_name, :last_name, :mobile, :email, :position, :codename, :zip, :range )
       end
 end

@@ -1,0 +1,86 @@
+<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 300px;
+      }
+</style>
+
+<div class="schedule-wrapper">
+  <div class="schedule-header">
+    <h3 class="avail-head">Travel Preferences</h3>
+  </div>
+
+  <div class="space-div"></div>
+
+  <div class="map-area-wrapper">
+    <% if current_user.zip == "" %>
+      <h3 class="display-zip-error">Please Update Your Zip Code:</h3>
+      <%= form_for current_user, html: { class: "zip-form" } do |f| %>
+        <%= f.text_field :zip %>
+        <label for="zip">Zip Code</label>
+        <br>
+        <br>
+        <%= f.submit "Update", class: "waves-effect waves-light btn-large" %>
+      <% end %>
+    <% elsif current_user.range == nil %>
+      <h3 class="display-zip-error">How Many Miles Are You Willing To Travel?</h3>
+      <br>
+      <%= form_for current_user, html: { class: "zip-form" } do |f| %>
+        <%= f.select( "range", [ 1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ], prompt: "---Please Choose---", html_options: { id: "range" } )%>
+        <label for="range">Range</label>
+        <br>
+        <br>
+        <%= f.submit "Update", class: "waves-effect waves-light btn-large" %>
+      <% end %>
+    <% else %>
+      <h3 class="display-zip-error">Based On Your Preferences</h3>
+      <p>this map indicates a <%= current_user.range %> mile radius</p>
+      <div id="map"></div>
+      <p>you may change your travel preferences at the top of your profile</p>
+      <style>
+        .map-area-wrapper {
+          height: 500px !important;
+        }
+      </style>
+    <% end %>
+  </div>
+</div>
+
+<% if current_user.zip != "" %>
+  <script>
+    var citymap = {
+      area: {
+        center: {lat: <%= @latlon[ 0 ] %>, lng: <%= @latlon[ 1 ] %>}
+      }
+    };
+
+    function initMap() {
+      // Create the map.
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: {lat: <%= @latlon[ 0 ] %>, lng: <%= @latlon[ 1 ] %>},
+        mapTypeId: 'terrain'
+      });
+
+      // Construct the circle for each value in citymap.
+      // Note: We scale the area of the circle based on the population.
+      for (var city in citymap) {
+        // Add the circle for this city to the map.
+        var cityCircle = new google.maps.Circle({
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35,
+          map: map,
+          center: citymap[city].center,
+          radius: <%= @meters %>
+        });
+      }
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfsMWg1j0Z3z5v2MB2jW62uKuP6FlXH80&callback=initMap">
+  </script>
+<% end %>

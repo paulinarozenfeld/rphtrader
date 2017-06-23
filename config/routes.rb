@@ -22,4 +22,7 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
+
+  resources :search
+  resources :coordinates
 end

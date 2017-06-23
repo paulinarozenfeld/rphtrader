@@ -32,6 +32,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'mailboxer'
 
+gem 'area'
+
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 # Use Redis adapter to run Action Cable in production
