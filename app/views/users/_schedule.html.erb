@@ -1,0 +1,25 @@
+<div class="schedule-wrapper">
+  <div class="schedule-header">
+    <h3 class="avail-head">My Availibility</h3>
+  </div>
+
+  <div class="space-div"></div>
+
+  <div class="schedule-props-wrapper">
+    <div class="selector-type-ep">
+      <h4>Select Type of Employment:</h4>
+      <br>
+      <%= form_for @user do |f| %>
+        <%= f.select :type_ep, [ "Full Time / Part Time", "Per Diem" ], prompt: "Choose One" %>
+      <% end %>
+    </div>
+
+    <div class="schedule-props">
+      <%= render 'fulls_sched_buildout' %>
+      <div class="image-right-toons">
+        <%= image_tag "yay-employees.png", class: "employees-yay-image" %>
+      </div>
+      <div id="calendar"></div>
+    </div>
+  </div>
+</div>

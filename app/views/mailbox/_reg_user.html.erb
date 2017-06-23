@@ -1,0 +1,82 @@
+<%= stylesheet_link_tag    '/materialPreloader.min.css' %>
+<%= stylesheet_link_tag    '/simditor.css' %>
+<%= stylesheet_link_tag    '/alpha.min.css' %>
+<%= stylesheet_link_tag    '/custom.css' %>
+
+<div class="container-fluid sb2">
+    <div class="row">
+        <div class="sb2-1">
+            <!--== USER INFO ==-->
+            <div class="sb2-12">
+                <ul>
+                    <li><%= image_tag "placeholder.jpg" %></li>
+                    <li>
+                        <h5><%= current_user.pharmacy_name %></h5>
+                    </li>
+                </ul>
+            </div>
+            <!--== LEFT MENU ==-->
+            <div class="sb2-13">
+                <%= render 'sidebar' %>
+            </div>
+        </div>
+        <div class="sb2-2">
+          <%= link_to "Inbox", mailbox_inbox_path, class: "btn btn-success" %>
+          <%= link_to "Trash", mailbox_trash_path, class: "btn btn-success" %>
+            <div class="row no-m-t no-m-b">
+                <div class="col s12 m12 l12 no-p-h">
+                    <div class="card mailbox-content">
+                      <% if @inbox.empty? %>
+                        <p class="no-mail-to-show">You Currently Have No Mail Here Yet</p>
+                      <% else %>
+                        <div class="card-content">
+                            <div class="row no-m-t no-m-b">
+                                <div class="col s12 m5 l3">
+                                    <div class="mailbox-list">
+                                        <ul>
+                                          <%= render 'mail_user_list' %>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <%= render 'mail_message_list' %>
+                            </div>
+                        </div>
+                      <% end %>
+                    </div>
+                </div>
+            </div>
+            <%# render partial: 'mailbox/folder_view', locals: { is_conversation: false, messages: @inbox } %>
+        </div>
+    </div>
+</div>
+
+<%= javascript_include_tag "/materialize.min.js" %>
+<%= javascript_include_tag "/materialPreloader.min.js" %>
+<%= javascript_include_tag "/jquery.blockui.js" %>
+<%= javascript_include_tag "/module.js" %>
+<%= javascript_include_tag "/hotkeys.js" %>
+<%= javascript_include_tag "/uploader.js" %>
+<%= javascript_include_tag "/simditor.js" %>
+<%= javascript_include_tag "/alpha.min.js" %>
+<%= javascript_include_tag "/mailbox.js" %>
+
+<script type="text/javascript">
+  var arr = $( "[id^=hide-mail-]" );
+
+  $( arr[ 0 ] ).show();
+
+  $( "[id^=mail-id-change]" ).on( 'click', function( e ) {
+    e.preventDefault();
+
+    var splitId = e.target.id.split( "-" )
+    var id = splitId[ splitId.length - 1 ]
+    var classShow = "#hide-mail-" + id
+    var scrollId = "#message-holdings-" + id
+
+    $( "[id^=hide-mail-]" ).hide();
+    $( classShow ).show();
+
+    var grabDiv = $( scrollId )[ 0 ]
+    grabDiv.scrollTop = grabDiv.scrollHeight;
+  });
+</script>

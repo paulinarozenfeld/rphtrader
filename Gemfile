@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'mailboxer'
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'

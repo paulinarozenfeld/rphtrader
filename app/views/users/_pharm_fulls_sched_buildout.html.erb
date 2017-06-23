@@ -1,0 +1,19 @@
+<% if current_user.type_ep == "Full Time / Part Time" %>
+  <div id="week">
+    <% @sched.attributes.each do | day, value | %>
+      <% if @days.include? ( day ) %>
+        <button type="button" name="button" class="week-button">
+          <input type="hidden" name="is" value="<%= @sched.id %>">
+          <div class="date-box">
+            <p><%= day.capitalize %></p>
+            <% if value == "inactive" %>
+              <i class="fa fa-check check-color 1 <%= day.downcase %>"></i>
+            <% else %>
+              <i class="fa fa-check check-color 1 check-color-grn <%= day.downcase %>"></i>
+            <% end %>
+          </div>
+        </button>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

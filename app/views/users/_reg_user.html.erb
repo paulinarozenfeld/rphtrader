@@ -1,0 +1,29 @@
+<div class="container-fluid sb2">
+    <div class="row">
+        <div class="sb2-1">
+            <!--== USER INFO ==-->
+            <div class="sb2-12">
+                <ul>
+                    <li><%= image_tag "placeholder.jpg" %></li>
+                    <li>
+                        <h5><%= current_user.first_name %> <%= current_user.last_name %><span> Santa Ana, CA</span></h5>
+                    </li>
+                </ul>
+            </div>
+            <!--== LEFT MENU ==-->
+            <div class="sb2-13">
+                <%= render 'sidebar' %>
+            </div>
+        </div>
+        <div class="sb2-2">
+            <div class="sb2-2-2">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Profile</a>
+                    </li>
+                </ul>
+            </div>
+            <%= render 'user-info' %>
+            <%= render 'schedule' %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,130 @@
+<% if @inbox %>
+  <% @inbox.each do | mail | %>
+    <div class="col s12 m7 l9" id="hide-mail-<%= mail.id %>">
+        <div class="mailbox-options">
+            <ul>
+                <li><a href="">Reply</a></li>
+            </ul>
+        </div>
+        <div class="mailbox-view">
+            <div class="mailbox-view-header">
+                <div class="left">
+                    <div class="left">
+                        <%= image_tag "profile-image-1.png", class: "circle mailbox-profile-image z-depth-1" %>
+                    </div>
+                    <div class="left">
+                        <span class="mailbox-title"><%= mail.subject %></span>
+                        <% if current_user.role == "Employees" %>
+                          <% @sender = mail.recipients.select { | obj | obj.role == "A Job" }[ 0 ] %>
+                          <span class="mailbox-author"><%= @sender.first_name %> <%= @sender.last_name %></span>
+                        <% else %>
+                          <% @sender = mail.recipients.select { | obj | obj.role == "Employees" }[ 0 ] %>
+                          <span class="mailbox-author"><%= @sender.pharmacy_name %></span>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="right mailbox-buttons">
+                  <%= link_to 'Trash', trash_conversation_path(mail), class: 'btn btn-danger waves-effect waves-red btn-flat m-t-xs', method: :post %>
+                </div>
+            </div>
+            <div class="divider mailbox-divider"></div>
+            <div class="mailbox-text" id="message-holdings-<%= mail.id %>">
+                <% mail.messages.sort.each do | message | %>
+                  <div class="container-mail-message-part shorter">
+                    <% if message.sender_id == current_user.id %>
+                      <div class="bubble bubble--alt"><%= message.body %></div>
+                    <% else %>
+                      <div class="bubble"><%= message.body %></div>
+                    <% end %>
+                  </div>
+                <% end %>
+            </div>
+            <div class="divider mailbox-divider"></div>
+            <%= form_for :message, url: reply_conversation_path( mail ), html: { class: "reply-formula" } do |f| %>
+                <div class="form-group">
+                  <%= f.text_area :body, placeholder: "Reply Message", rows: 4, class: "form-control", id: "form-#{ mail.id }" %>
+                </div>
+                <%= f.submit "Send", class: 'btn btn-danger pull-right reply-with-message' %>
+            <% end %>
+        </div>
+    </div>
+  <% end %>
+<% elsif @trash %>
+  <% @trash.each do | mail | %>
+    <div class="col s12 m7 l9" id="hide-mail-<%= mail.id %>">
+        <div class="mailbox-options">
+            <ul>
+                <li><a href="">Reply</a></li>
+            </ul>
+        </div>
+        <div class="mailbox-view">
+            <div class="mailbox-view-header">
+                <div class="left">
+                    <div class="left">
+                        <%= image_tag "profile-image-1.png", class: "circle mailbox-profile-image z-depth-1" %>
+                    </div>
+                    <div class="left">
+                        <span class="mailbox-title"><%= mail.subject %></span>
+                          <% if current_user.role == "Employees" %>
+                            <% @sender = mail.recipients.select { | obj | obj.role == "A Job" }[ 0 ] %>
+                            <span class="mailbox-author"><%= @sender.first_name %> <%= @sender.last_name %></span>
+                          <% else %>
+                            <% @sender = mail.recipients.select { | obj | obj.role == "Employees" }[ 0 ] %>
+                            <span class="mailbox-author"><%= @sender.pharmacy_name %></span>
+                          <% end %>
+                        <span class="mailbox-author"><%= @sender.first_name %> <%= @sender.last_name %></span>
+                    </div>
+                </div>
+                <div class="right mailbox-buttons">
+                  <%= link_to 'Untrash', untrash_conversation_path(mail), class: 'btn btn-danger waves-effect waves-red btn-flat m-t-xs', method: :post %>
+                  <%= link_to 'Delete Permanently', conversation_path(mail), method: "delete", class: 'btn btn-danger waves-effect waves-red btn-flat m-t-xs' %>
+                </div>
+            </div>
+            <div class="divider mailbox-divider"></div>
+            <div class="mailbox-text" id="message-holdings-<%= mail.id %>">
+                <% mail.messages.sort.each do | message | %>
+                  <div class="container-mail-message-part shorter">
+                    <% if message.sender_id == current_user.id %>
+                      <div class="bubble bubble--alt"><%= message.body %></div>
+                    <% else %>
+                      <div class="bubble"><%= message.body %></div>
+                    <% end %>
+                  </div>
+                <% end %>
+            </div>
+            <div class="divider mailbox-divider"></div>
+        </div>
+    </div>
+  <% end %>
+<% end %>
+
+<script type="text/javascript">
+  $( document ).ready( function() {
+    var grabDiv = $( "[id^=message-holdings-]" )[ 0 ]
+    grabDiv.scrollTop = grabDiv.scrollHeight;
+  });
+
+  $( '.reply-with-message' ).on( 'click', function( e ) {
+    e.preventDefault();
+
+    var targetData = e.target.parentElement;
+
+    var type = targetData.method;
+    var url = targetData.action;
+    var data = $( targetData ).serialize();
+
+    $.ajax({
+      type: type,
+      url: url,
+      data: data
+    }).done( function( response ) {
+      var mailID = $( response ).children()[ 0 ].value;
+      var scrollId = "#message-holdings-" + mailID;
+      $( scrollId ).append( response );
+      var grabDiv = $( scrollId )[ 0 ];
+      grabDiv.scrollTop = grabDiv.scrollHeight;
+      $( "form.reply-formula" )[ 0 ].reset();
+      document.getElementById( "form-" + mailID ).focus();
+    });
+  });
+</script>

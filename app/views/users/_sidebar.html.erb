@@ -1,0 +1,14 @@
+<ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <%= link_to user_path( current_user ), class: "waves-effect menu-active" do %>
+        <i class="fa fa-user" aria-hidden="true"></i>
+        Profile
+      <% end %>
+    </li>
+    <li>
+      <%= link_to mailbox_inbox_path, class: "waves-effect" do %>
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        Mailbox
+      <% end %>
+    </li>
+</ul>

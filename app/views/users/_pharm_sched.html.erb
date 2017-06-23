@@ -1,0 +1,88 @@
+<div class="schedule-wrapper">
+  <div class="schedule-header">
+    <h3 class="avail-head">Employment Preferences</h3>
+  </div>
+
+  <div class="space-div"></div>
+
+  <div class="schedule-props-wrapper">
+    <div class="selector-type-ep">
+      <h4>Select Type of Employment:</h4>
+      <br>
+      <%= form_for @job_checks, :html => {:class => "form-pos"} do |f| %>
+        <% if @job_checks[ "pharmacist" ] == "active" %>
+          <%= f.check_box :pharmacist, {checked: true}, class: "form-control check-box-pos-pharmacist" %>
+        <% else %>
+          <%= f.check_box :pharmacist, class: "form-control check-box-pos-pharmacist" %>
+        <% end %>
+        <label for="pharmacist" class="check-box-pos-pharmacist">Pharmacist</label>
+        <br>
+        <% if @job_checks[ "technician" ] == "active" %>
+          <%= f.check_box :technician, {checked: true}, class: "form-control check-box-pos-technician" %>
+        <% else %>
+          <%= f.check_box :technician, class: "form-control check-box-pos-technician" %>
+        <% end %>
+        <label for="technician" class="check-box-pos-technician">Technician</label>
+        <br>
+        <% if @job_checks[ "intern" ] == "active" %>
+          <%= f.check_box :intern, { checked: true }, class: "form-control check-box-pos-intern" %>
+        <% else %>
+          <%= f.check_box :intern, class: "form-control check-box-pos-intern" %>
+        <% end %>
+        <label for="intern" class="check-box-pos-intern">Intern</label>
+        <br>
+        <% if @job_checks[ "cashier" ] == "active" %>
+          <%= f.check_box :cashier, { checked: true }, class: "form-control check-box-pos-cashier" %>
+        <% else %>
+          <%= f.check_box :cashier, class: "form-control check-box-pos-cashier" %>
+        <% end %>
+        <label for="cashier" class="check-box-pos-cashier">Cashier</label>
+      <% end %>
+
+      <br>
+      <br>
+
+      <%= form_for @user do |f| %>
+        <%= f.select :type_ep, [ "Full Time / Part Time", "Per Diem" ], prompt: "Choose One" %>
+      <% end %>
+    </div>
+
+    <div class="schedule-props">
+      <%= render 'pharm_fulls_sched_buildout' %>
+      <div class="image-right-toons">
+        <%= image_tag "yay-employees.png", class: "employees-yay-image" %>
+      </div>
+      <div id="calendar"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $( '[class^=check-box-pos-]' ).on( 'click', function( e ) {
+    var classThis = "." + e.target.className;
+    var dataList = e.target.className.split( "-" );
+    var data = "pos=" + dataList[ dataList.length - 1 ];
+    var inputThis = $( classThis )[ 0 ];
+
+    var url = document.getElementsByClassName( "form-pos" )[ 0 ].action;
+
+    $.ajax({
+      type: 'patch',
+      url: url,
+      data: data
+    }).done( function( response ) {
+      var checkAttr = $( response )[ 0 ]
+      var checkComp = $( checkAttr ).html();
+      var textP = $( response )[ 2 ];
+      var position = $( textP ).html();
+      var thisClass = ".check-box-pos-" + position
+      var thisClassFalse = "#field_" + position
+
+      if ( checkComp === "CHECK" ) {
+        $( thisClass )[ 0 ].checked = true
+      } else {
+        $( thisClassFalse )[ 0 ].checked = false
+      };
+    });
+  });
+</script>

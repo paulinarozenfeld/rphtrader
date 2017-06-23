@@ -10,4 +10,8 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def active_page(active_page)
+    @active == active_page ? "active" : ""
+  end
 end

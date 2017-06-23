@@ -1,0 +1,45 @@
+<% if @inbox %>
+  <% @inbox.each do | mail | %>
+    <li>
+      <a href="" class="mail-id-change" id="mail-id-change-<%= mail.id %>">
+        <% if current_user.role == "Employees" %>
+          <% @sender = mail.recipients.select { | obj | obj.role == "A Job" }[ 0 ] %>
+          <h5 class="mail-author"><%= @sender.first_name %> <%= @sender.last_name %></h5>
+        <% else %>
+          <% @sender = mail.recipients.select { | obj | obj.role == "Employees" }[ 0 ] %>
+          <h5 class="mail-author"><%= @sender.pharmacy_name %></h5>
+        <% end %>
+        <h4 class="mail-title"><%= mail.subject %></h4>
+        <% if current_user.role == "Employees" %>
+          <% @messages = mail.messages.select { |obj| obj.sender.role == "A Job" } %>
+        <% else %>
+          <% @messages = mail.messages.select { | obj | obj.sender.role == "Employees" } %>
+        <% end %>
+        <p class="hide-on-small-and-down mail-text"><%= @messages.sort.last.body[ 0..39 ] %></p>
+        <div class="position-top-right p f-12 mail-date"><%= @messages.sort.last.created_at.strftime( "%I:%M %P" ) %></div>
+      </a>
+    </li>
+  <% end %>
+<% elsif @trash %>
+  <% @trash.each do | mail | %>
+    <li>
+      <a href="" class="mail-id-change" id="mail-id-change-<%= mail.id %>">
+        <% if current_user.role == "Employees" %>
+          <% @sender = mail.recipients.select { | obj | obj.role == "A Job" }[ 0 ] %>
+          <h5 class="mail-author"><%= @sender.first_name %> <%= @sender.last_name %></h5>
+        <% else %>
+          <% @sender = mail.recipients.select { | obj | obj.role == "Employees" }[ 0 ] %>
+          <h5 class="mail-author"><%= @sender.pharmacy_name %></h5>
+        <% end %>
+        <h4 class="mail-title"><%= mail.subject %></h4>
+        <% if current_user.role == "Employees" %>
+          <% @messages = mail.messages.select { |obj| obj.sender.role == "A Job" } %>
+        <% else %>
+          <% @messages = mail.messages.select { | obj | obj.sender.role == "Employees" } %>
+        <% end %>
+        <p class="hide-on-small-and-down mail-text"><%= @messages.sort.last.body[ 0..39 ] %></p>
+        <div class="position-top-right p f-12 mail-date"><%= @messages.sort.last.created_at.strftime( "%I:%M %P" ) %></div>
+      </a>
+    </li>
+  <% end %>
+<% end %>

@@ -1,0 +1,105 @@
+// Place all the styles related to the mailbox controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+*[id^='hide-mail-'] {
+  display: none;
+}
+
+.mail-id-change h1,h2,h3,h4,h5,p {
+  pointer-events: none;
+}
+
+div.mail-date {
+  pointer-events: none;
+}
+
+*[id^='message-holdings-'] {
+  overflow-y: auto;
+  height: 400px;
+}
+
+/* Bit of normalisation */
+
+body {
+	background-color: #eee;
+	color: #222;
+	font: 0.8125em/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+.container-mail-message-part {
+	margin: 0 auto;
+  width: 100% !important;
+}
+
+p.no-mail-to-show {
+  text-align: center;
+  padding: 50px;
+  font-size: 30px;
+}
+
+
+/* .bubble */
+
+.bubble {
+	background-color: #E5E5EA;
+	border-radius: 20px;
+	box-sizing: border-box;
+	clear: both;
+	float: left;
+	margin-bottom: 20px;
+	padding: 4px 20px;
+	position: relative;
+	width: auto;
+	max-width: 100%;
+	word-wrap: break-word;
+  color: #000 !important;
+}
+
+.bubble:before, .bubble:after {
+	border-radius: 20px / 10px;
+	content: '';
+	display: block;
+	position: absolute;
+}
+
+.bubble:before {
+	border: 10px solid transparent;
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	bottom: 0;
+	left: -7px;
+	z-index: -2;
+}
+
+.bubble:after {
+	border: 8px solid transparent;
+	border-bottom-color: #E5E5EA;
+	bottom: 1px;
+	left: -5px;
+}
+
+.bubble--alt {
+	background-color: #0B93F6;
+	float: right;
+  color: #ffffff !important;
+}
+
+.bubble--alt:before {
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	border-radius: 20px / 10px;
+	left: auto;
+	right: -7px;
+}
+
+.bubble--alt:after {
+	border-bottom-color: #0B93F6;
+	border-radius: 20px / 10px;
+	left: auto;
+	right: -5px;
+}

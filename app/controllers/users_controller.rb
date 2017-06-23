@@ -7,13 +7,19 @@ class UsersController < ApplicationController
     @user = current_user
     @date = params[ :date ] ? Date.parse( params[ :date ] ) : Date.today
 
-    @dates_per_diem = []
+    if current_user.role == "A Job"
+      @dates_per_diem = []
 
-    if current_user.type_ep == "Per Diem"
-      current_user.events.each { | event | @dates_per_diem << event }
+      if current_user.type_ep == "Per Diem"
+        current_user.events.each { | event | @dates_per_diem << event }
+      else
+        @days = [ 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' ]
+        @sched = current_user.fulls[ 0 ]
+      end
     else
       @days = [ 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' ]
       @sched = current_user.fulls[ 0 ]
+      @job_checks = current_user.fields[ 0 ]
     end
   end
 

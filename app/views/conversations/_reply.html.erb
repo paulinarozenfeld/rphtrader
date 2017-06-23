@@ -1,0 +1,8 @@
+<div class="container-mail-message-part shorter">
+  <input type="hidden" value="<%= conversation.id %>">
+  <% if conversation.messages.sort.last.sender_id == current_user.id %>
+    <div class="bubble bubble--alt"><%= message[ :body ] %></div>
+  <% else %>
+    <div class="bubble"><%= message[ :body ] %></div>
+  <% end %>
+</div>

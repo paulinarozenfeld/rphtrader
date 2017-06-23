@@ -6,9 +6,20 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     user = User.new( create_params )
 
+    if user.first_name != nil
+      user.type_ep = "Full Time / Part Time"
+    end
+
     if user.save
       sign_in( :user, user )
-      Full.create( sunday: "inactive", monday: "inactive", tuesday: "inactive", wednesday: "inactive", thursday: "inactive", friday: "inactive", saturday: "inactive", user_id: current_user.id )
+
+      if user.role == "A Job"
+        Full.create( sunday: "inactive", monday: "inactive", tuesday: "inactive", wednesday: "inactive", thursday: "inactive", friday: "inactive", saturday: "inactive", user_id: current_user.id )
+      else
+        Full.create( sunday: "inactive", monday: "inactive", tuesday: "inactive", wednesday: "inactive", thursday: "inactive", friday: "inactive", saturday: "inactive", user_id: current_user.id )
+        Field.create( pharmacist: "inactive", intern: "inactive", technician: "inactive", cashier: "inactive", user_id: current_user.id )
+      end
+
       redirect_to user_path( user )
     end
   end

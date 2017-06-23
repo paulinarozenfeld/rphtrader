@@ -1,0 +1,17 @@
+<%= stylesheet_link_tag    '/materialize.css' %>
+<%= stylesheet_link_tag    '/mob.css' %>
+<%= stylesheet_link_tag    '/style_admin.css' %>
+<body>
+    <!--== MAIN CONTRAINER ==-->
+    <%= render 'layouts/dash_header' %>
+
+    <!--== BODY CONTNAINER ==-->
+    <% if current_user.role == "A Job" %>
+      <%= render 'reg_user' %>
+    <% else %>
+      <%= render 'pharm_user' %>
+    <% end %>
+    <!--======== SCRIPT FILES =========-->
+    <%= javascript_include_tag '/materialize.min.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag '/custom_admin.js', 'data-turbolinks-track': 'reload' %>
+</body>
