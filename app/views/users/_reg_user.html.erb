@@ -6,7 +6,11 @@
                 <ul>
                     <li><%= image_tag "placeholder.jpg" %></li>
                     <li>
-                        <h5><%= current_user.first_name %> <%= current_user.last_name %><span> Santa Ana, CA</span></h5>
+                        <h5><%= current_user.first_name %> <%= current_user.last_name %>
+                          <% if current_user.zip != "" %>
+                            <span> <%= current_user.zip.to_region %></span>
+                          <% end %>
+                        </h5>
                     </li>
                 </ul>
             </div>
