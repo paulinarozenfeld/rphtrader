@@ -49,8 +49,22 @@
 
     <div class="schedule-props">
       <%= render 'pharm_fulls_sched_buildout' %>
-      <div class="image-right-toons">
-        <%= image_tag "yay-employees.png", class: "employees-yay-image" %>
+      <div class="notes-section">
+        <h3 class="notes-section-header">Notes</h3>
+        <p class="notes-section-subhead">include any information you'd like to be visible to employees</p>
+        <p class="notes-section-subhead">ie: preferred hours, system proficiencies, etc...</p>
+        <div class="notes-section-body">
+          <% @notes.each do | note | %>
+          <div class="note-holder-<%= note.id %>">
+            <%= form_for note, html: { method: :delete } do |f| %>
+              <%= f.hidden_field :id, value: note.id %>
+              <%= f.submit "Delete", class: "delete-note" %>
+            <% end %>
+            <p class="note-body"><%= note.body %></p>
+          </div>
+          <% end %>
+          <%= link_to "Add Note", new_note_path, class: "new-note-link" %>
+        </div>
       </div>
       <div id="calendar"></div>
     </div>
@@ -83,6 +97,38 @@
       } else {
         $( thisClassFalse )[ 0 ].checked = false
       };
+    });
+  });
+
+  $( '.new-note-link' ).on( 'click', function( e ) {
+    e.preventDefault();
+    var target = e.target;
+    var url = target.href;
+
+    $.ajax({
+      type: 'get',
+      url: url
+    }).done( function( response ) {
+      $( '.new-note-link' ).hide();
+      $( '.notes-section-body' ).append( response )
+    });
+  });
+
+  $( '.delete-note' ).on( "click", function( e ) {
+    e.preventDefault();
+
+    var target = e.target.parentElement;
+    var type = target.method;
+    var url = target.action;
+    var data = $( target ).serialize();
+
+    $.ajax({
+      type: type,
+      url: url,
+      data: data
+    }).done( function( response ) {
+      var findClass = "." + $( response ).html();
+      $( findClass ).hide();
     });
   });
 </script>

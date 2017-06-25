@@ -25,4 +25,5 @@ Rails.application.routes.draw do
 
   resources :search
   resources :coordinates
+  resources :notes
 end

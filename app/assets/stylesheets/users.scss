@@ -12,7 +12,7 @@
 }
 
 .schedule-props {
-  width: 175px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -20,6 +20,12 @@
   background-color: #ffffff;
   padding: 50px;
   height: 510px;
+}
+
+.notes-section-header {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 25px;
 }
 
 .avail-head {
@@ -170,4 +176,54 @@ span#month {
 
 .zip-form {
   width: 300px;
+}
+
+#week {
+  width: 175px;
+  float: left;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+form.edit_note {
+  display: inline;
+  float: left;
+  margin-top: 2px;
+}
+
+.notes-section-body {
+  width: 40%;
+  height: 300px;
+  background-color: #346392;
+  float: right;
+  margin-top: 20px;
+  padding: 30px;
+  overflow: auto;
+  border-radius: 25px;
+}
+
+.note-body {
+  word-wrap: break-word;
+  color: #ffffff;
+  display: inline;
+}
+
+.delete-note {
+  color: orange;
+  border: none;
+  background-color: rgba(0,0,0,0);
+  float: left;
+  margin-right: 20px;
+}
+
+a.new-note-link {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.notes-section-subhead {
+  text-align: center;
+  color: rgba( 0,0,0,0.6 );
+  margin-top: 5px;
+  line-height: 10px;
 }

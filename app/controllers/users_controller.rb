@@ -28,6 +28,7 @@ class UsersController < ApplicationController
       @days = [ 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' ]
       @sched = current_user.fulls[ 0 ]
       @job_checks = current_user.fields[ 0 ]
+      @notes = current_user.notes.sort
     end
   end
 

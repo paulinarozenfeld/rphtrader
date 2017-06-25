@@ -7,35 +7,33 @@
                     <p>Here you can adjust your profile to fit your needs</p>
                 </div>
                 <div class="tab-inn">
-                    <form>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="pharmacy_name" type="text" value="<%= current_user.pharmacy_name %>" class="validate">
-                                <label for="pharmacy_name">Pharmacy Name</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="alias" type="text" value="<%= current_user.alias %>" class="validate">
-                                <label for="alias">Codename</label>
-                            </div>
+                    <%= form_for current_user do |f| %>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <%= f.text_field :pharmacy_name, value: current_user.pharmacy_name, class: "validate" %>
+                          <label for="pharmacy_name">Pharmacy Name</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="country" type="text" value="<%= current_user.zip %>" class="validate">
-                                <label for="country">Zip Code</label>
-                            </div>
+                        <div class="input-field col s6">
+                          <%= f.text_field :alias, value: current_user.alias, class: "validate" %>
+                          <label for="alias">Codename</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="email" type="email" value="<%= current_user.email %>" class="validate">
-                                <label for="email">Email</label>
-                            </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <%= f.text_field :zip, value: current_user.zip, class: "validate" %>
+                          <label for="zip">Zip Code</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input type="submit" class="waves-effect waves-light btn-large" value="Update">
-                            </div>
+                        <div class="input-field col s6">
+                          <%= f.email_field :email, value: current_user.email, class: "validate" %>
+                          <label for="email">Email</label>
                         </div>
-                    </form>
+                      </div>
+                      <div class="row">
+                          <div class="input-field col s12">
+                              <%= f.submit "Update", class: "waves-effect waves-light btn-large" %>
+                          </div>
+                      </div>
+                    <% end %>
                 </div>
             </div>
         </div>
